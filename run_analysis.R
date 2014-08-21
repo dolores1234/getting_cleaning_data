@@ -77,7 +77,7 @@ names(exDF) <- sub(".std..|.std...", "Std", names(exDF))
 
 # convert to tidy data frame
 tidyDF <- exDF[, 2:69] #180 obs of 68 variablesU
- i
+ 
 # create data file 
 write.table(tidyDF, file= "./UCI HAR Dataset/tidy.txt",  quote=FALSE, row.names=FALSE)
 rm(tidyDF)
