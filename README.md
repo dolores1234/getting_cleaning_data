@@ -46,9 +46,9 @@ The script run_analysis.R has four main parts:
 	with descriptive column headers
 	
 To read the new (tidy)data file:
-	* the file name is tidy.txt
-	* the file is space-delimited
-	* and, the first row (record) contains the header data. 
+* the file name is tidy.txt
+* the file is space-delimited
+* and, the first row (record) contains the header data. 
 		
 		
 		
