@@ -1,7 +1,6 @@
 library(reshape2)
 # Get files and unzip
 target_url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-# target_localfile <- "c:/users/dkalayta/documents/a1.zip"
 target_localfile <- "./data/a1.zip"
 if (!file.exists(target_localfile)){download.file(target_url, target_localfile)}
 unzip(target_localfile, exdir= "data")
@@ -31,7 +30,7 @@ subject_train <- read.table("./UCI HAR Dataset/train/subject_train.txt") #7352 o
 X_test <- read.table("./UCI HAR Dataset/test/X_test.txt") #2947 obs. of 561 variables (v1 : v561))
 
  #file_7
-y_test <- read.table("./UCI HAR Dataset/test/y_test.txt") #2047 obs. of 1 varaible; v1 represents acitivity_nbr (values 1 - 6)
+y_test <- read.table("./UCI HAR Dataset/test/y_test.txt") #2947 obs. of 1 varaible; v1 represents acitivity_nbr (values 1 - 6)
 
  #file_8
 subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt") # 2947 obs. of 1 variable; v1 represents participant (subject) values (1- 30)
@@ -61,7 +60,7 @@ colnames(mergedData) <- y[1:563,2] #10299 obs. of 563 variables with subject and
 cn<-names(mergedData)
 m <- grep("-mean+[(]|-std", cn, value=TRUE )
 
-exDF <- mergedData[, m] #10299 obs. of 67 variables
+exDF <- mergedData[, m] #10299 obs. of 66 variables
 exDF <-cbind(mergedData[,1:3], exDF) #10299 obs of 69 variables
 
  # aggregate
@@ -76,7 +75,7 @@ names(exDF) <-sub(".mean..|.mean...", "Mean", names(exDF))
 names(exDF) <- sub(".std..|.std...", "Std", names(exDF))
 
 # convert to tidy data frame
-tidyDF <- exDF[, 2:69] #180 obs of 68 variablesU
+tidyDF <- exDF[, 2:69] #180 obs of 68 variables
  
 # create data file 
 write.table(tidyDF, file= "./UCI HAR Dataset/tidy.txt",  quote=FALSE, row.names=FALSE)
