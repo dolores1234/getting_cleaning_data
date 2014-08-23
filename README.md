@@ -4,14 +4,14 @@
 
 The script run_analysis.R has four main parts:
 
-1. Download and unzip 8 files with data collected from the acceleromaters from the Samsung Galazy S smartphone, participant, 
+1. Download and unzip 8 files with data collected from the accelerometers from the Samsung Galazy S smartphone, participant, 
    activity and features information. 
    
 2. The files are read into R using the read.table function and stored as 8 separate data frames.
    The purpose of the project is to transform the 8 data frames into a single data set with the average of each variable
    for each ativity and each subject.
    
-3. The data frames are tranformed into a single data frame by: 
+3. The data frames are transformed into a single data frame by: 
 
 	* using rbind to combine the X train and test measurement data frames to create a newX data frame with
 	10299 observations on 561 measurement variables.
