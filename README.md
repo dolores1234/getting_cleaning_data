@@ -19,7 +19,7 @@ The script run_analysis.R has four main parts:
 	* using rbind to combine the Y train and test data frames to create a newy data frame with 
 	10299 observations on 1 activity variable.
 	
-	* using rbind again to combine the the subject train and test data frames to create the newSubject data frame
+	* using rbind again to combine the subject train and test data frames to create the newSubject data frame
 	with 10299 observations on 1 participant (subject) variable.
 	
 	* using cbind to combine the newX and newY data frames to create a mergedData data frame of 10299
@@ -37,7 +37,7 @@ The script run_analysis.R has four main parts:
 	and assigned to the data frame y.  The y data frame now has 563 rows and 2 columns.  Column 2 of y is used to 
 	replace the default variables names in the merged_data data frame.
 	
-	* as requested, I was able to search for all variables names in mergedData that contain the pattern "-mean(" or the 
+	* as requested, I was able to search for all variable names in mergedData that contain the pattern "-mean(" or the 
 	pattern "-std(".  These patterns will identify only those variables on which the mean or standard deviation calculation 
 	were applied. The "grep" function was used to perform the search, replacement and retrieval of only the desired variable names. 
 	This vector of desired names is used to transform (subset) the mergedData data frame to 10299 observations on 66 variables and 
@@ -59,8 +59,8 @@ The script run_analysis.R has four main parts:
 		
 		* I subset the exDF data frame to remove the activity_nbr column to produce the tidy data frame (tidyDF).
 		
-4. I used write.table on tidyDF with quotes and row.names turned off (set to FALSE).  This created the space-delimited tidy dataset, tidy.txt 
-	with descriptive column headers.
+4. I used write.table on tidyDF with quotes and row.names turned off (set to FALSE).  This created the space-delimited tidy dataset, 
+tidy.txt with descriptive column headers.
 	
 To read the new (tidy)data file:
 * the file name is tidy.txt
