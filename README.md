@@ -3,6 +3,7 @@
 ### Dolores Kalayta
 
 The script run_analysis.R has four main parts:
+
 1. Download and unzip 8 files with data collected from the acceleromaters from the Samsung Galazy S smartphone, participant, 
    activity and features information. 
    
